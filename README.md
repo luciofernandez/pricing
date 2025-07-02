@@ -1,5 +1,5 @@
 
-# 📚 Sistema de Calificaciones - Proyecto Java Spring Boot 3
+# 📚 Pricing API - Proyecto Java Spring Boot 3
 
 Este proyecto implementa una API REST para consultar el precio final y la tarifa que aplica a un producto de una cadena entre unas fechas determinadas.
 
