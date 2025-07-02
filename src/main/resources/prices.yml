@@ -1,0 +1,109 @@
+openapi: 3.0.4
+info:
+  title: PricingAPI - Inditex Exercise
+  description: |-
+    REST service that provides the applicable pricing rate for a given product and brand at a specified date. Based on the input parameters (application date, product ID, brand ID),  the service returns the following information according to pricing rules (date range and priority):
+      - Product ID
+      - Brand ID
+      - Applied price rate
+      - Price validity period
+      - Final sale price
+
+    Some useful links:
+    - [Pricing API repository](https://github.com/luciofernandez/inditex)
+    - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.12
+tags:
+  - name: prices
+paths:
+  /prices:
+    get:
+      tags:
+        - prices
+      summary: Get applicable price.
+      parameters:
+        - name: applicationDate
+          in: query
+          required: true
+          schema:
+            type: string
+          example: "2020-06-14 10:00:00"
+        - name: productId
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 35455      
+        - name: brandId
+          in: query
+          required: true
+          schema:
+            type: integer
+          example: 35455               
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/PriceResponse'
+            application/xml:
+              schema:
+                  $ref: '#/components/schemas/PriceResponse'
+        '400':
+          description: Invalid parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Price not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'               
+
+components:
+  schemas:
+    PriceResponse:
+      type: object
+      properties:
+        productId:
+          type: integer
+          example: 35455
+        brandId:
+          type: integer
+          example: 1
+        priceList:
+          type: integer
+          example: 2
+        startDate:
+          type: string
+          example: "2020-06-14 15:00:00"
+        endDate:
+          type: string
+          example: "2020-12-31 23:59:59"          
+        price:
+          type: string
+          example: "20.10 EUR"
+    ErrorResponse:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+          example: "2025-06-30 12:34:56"
+        status:
+          type: integer
+          example: 404
+        error:
+          type: string
+          example: "Not Found"
+        message:
+          type: string
+          example: "No price found for the given criteria"
