@@ -11,7 +11,7 @@ info:
 
     Some useful links:
     - [Pricing API repository](https://github.com/luciofernandez/inditex)
-    - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
+    - [The source API definition for the Pet Store](https://github.com/luciofernandez/pricing/blob/main/src/main/resources/prices.yml)
   contact:
     email: apiteam@swagger.io
   license:
