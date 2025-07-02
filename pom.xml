@@ -13,19 +13,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>pricing</name>
 	<description>Inditex test by Lucio Fernandez</description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
 	<properties>
 		<java.version>21</java.version>
     	<openapi.generator.version>7.1.0</openapi.generator.version>		
@@ -51,7 +38,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -70,18 +57,10 @@
 		    <artifactId>jakarta.validation-api</artifactId>
 		</dependency>
 		
-		<!-- OpenAPI Annotations -->
-		<dependency>
-		    <groupId>io.swagger</groupId>
-		    <artifactId>swagger-annotations</artifactId>
-		    <version>1.6.16</version>
-		</dependency>
-
-        <!-- https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-core -->
 		<dependency>
 		  <groupId>org.springdoc</groupId>
 		  <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-		  <version>2.5.0</version>
+    	  <version>2.7.0</version>
 		</dependency>
 
 	</dependencies>

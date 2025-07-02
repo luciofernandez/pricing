@@ -32,7 +32,7 @@ paths:
           required: true
           schema:
             type: string
-          example: "2020-06-14 10:00:00"
+          example: "2020-06-14-10:00:00"
         - name: productId
           in: query
           required: true
@@ -84,10 +84,10 @@ components:
           example: 2
         startDate:
           type: string
-          example: "2020-06-14 15:00:00"
+          example: "2020-06-14-15:00:00"
         endDate:
           type: string
-          example: "2020-12-31 23:59:59"          
+          example: "2020-12-31-23:59:59"          
         price:
           type: string
           example: "20.10 EUR"
@@ -97,10 +97,7 @@ components:
         timestamp:
           type: string
           format: date-time
-          example: "2025-06-30 12:34:56"
-        status:
-          type: integer
-          example: 404
+          example: "2025-06-30-12:34:56"
         error:
           type: string
           example: "Not Found"
