@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "GET price",
+			"name": "GET price Test1",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -41,7 +41,7 @@
 			"response": []
 		},
 		{
-			"name": "GET price with higher priority",
+			"name": "GET price Test2",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -60,6 +60,108 @@
 						{
 							"key": "applicationDate",
 							"value": "2020-06-14-10:00:00"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET price Test3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/inditex/prices?applicationDate=2020-06-14-10:00:00&brandId=1&productId=35455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inditex",
+						"prices"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14-10:00:00"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET price Test4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/inditex/prices?applicationDate=2020-06-14-10:00:00&brandId=1&productId=35455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inditex",
+						"prices"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-14-10:00:00"
+						},
+						{
+							"key": "brandId",
+							"value": "1"
+						},
+						{
+							"key": "productId",
+							"value": "35455"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET price Test5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/inditex/prices?applicationDate=2020-06-16-21:00:00&brandId=1&productId=35455",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"inditex",
+						"prices"
+					],
+					"query": [
+						{
+							"key": "applicationDate",
+							"value": "2020-06-16-21:00:00"
 						},
 						{
 							"key": "brandId",
