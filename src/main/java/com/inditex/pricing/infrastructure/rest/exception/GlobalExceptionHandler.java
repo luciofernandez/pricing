@@ -19,8 +19,6 @@ import jakarta.validation.ConstraintViolationException;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
-
 	@ExceptionHandler(BrandPriceNotFoundException.class)
 	public ResponseEntity<ErrorResponse> handleValidationNotFoundStatus(BrandPriceNotFoundException ex) {
 		ErrorResponse error = ErrorResponseMapper.convertToErrorResponse(

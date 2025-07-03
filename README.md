@@ -48,7 +48,7 @@ Este proyecto implementa una API REST para consultar el precio final y la tarifa
 1. Clonar el repositorio:
    
 ```bash
-   git clone https://tu-repositorio.git
+   git clone https://github.com/luciofernandez/pricing.git
 ```
  
 2. Generar el código fuente desde el contrato OpenAPI:
@@ -100,7 +100,7 @@ http://localhost:8080/h2-console
 2. Importar la colección:
    - Haz clic en **Import** (arriba a la izquierda).
    - Selecciona la pestaña **File**.
-   - Navega y selecciona el archivo `postman_collection.json` que se encuentra en `src/main/resources` de este proyecto.
+   - Navega y selecciona el archivo `postman_collection.json` que se encuentra en `src/main/resources/postmasn` de este proyecto.
    - Haz clic en **Import**.
 
 3. La colección aparecerá en la barra lateral izquierda con todas las solicitudes configuradas.
