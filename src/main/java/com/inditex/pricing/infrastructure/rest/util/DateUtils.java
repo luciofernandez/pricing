@@ -8,11 +8,11 @@ import com.inditex.pricing.infrastructure.rest.exception.DateFomatException;
 
 public class DateUtils {
 	
-    public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH:mm:ss");
+    public static final DateTimeFormatter ISO_FORMAT = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 
     public static LocalDateTime getFormatDate(String dateStr) {
         try {
-            return LocalDateTime.parse(dateStr, FORMATTER);
+            return LocalDateTime.parse(dateStr, ISO_FORMAT);
         } catch (DateTimeParseException e) {
             throw new DateFomatException(dateStr + " invalid date");
         }

@@ -1,10 +1,12 @@
-package com.inditex.pricing.infrastructure.rest.formatter;
+package com.inditex.pricing.infrastructure.rest.unit.formatter;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Test;
+
+import com.inditex.pricing.infrastructure.rest.formatter.PriceFormatter;
 
 public class PriceFormatterTest {
 	

@@ -1,4 +1,4 @@
-package com.inditex.pricing.infrastructure.rest.mapper;
+package com.inditex.pricing.infrastructure.rest.unit.mapper;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import com.inditex.pricing.domain.model.BrandPrice;
 import com.inditex.pricing.infrastructure.rest.formatter.PriceFormatter;
+import com.inditex.pricing.infrastructure.rest.mapper.PriceResponseMapper;
 import com.inditex.pricing.infrastructure.rest.util.DateUtils;
 import com.inditex.pricing.model.PriceResponse;
 
@@ -35,8 +36,8 @@ public class PriceResponseMapperTest {
         assertThat(response.getPriceList()).isEqualTo(brandPrice.getPriceList());
 
         // fechas formateadas
-        String expectedStartDate = brandPrice.getStartDate().format(DateUtils.FORMATTER);
-        String expectedEndDate = brandPrice.getEndDate().format(DateUtils.FORMATTER);
+        String expectedStartDate = brandPrice.getStartDate().format(DateUtils.ISO_FORMAT);
+        String expectedEndDate = brandPrice.getEndDate().format(DateUtils.ISO_FORMAT);
         assertThat(response.getStartDate()).isEqualTo(expectedStartDate);
         assertThat(response.getEndDate()).isEqualTo(expectedEndDate);
 

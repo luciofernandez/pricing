@@ -1,4 +1,4 @@
-package com.inditex.pricing.usecase;
+package com.inditex.pricing.application.usecase;
 
 import java.time.LocalDateTime;
 
@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import com.inditex.pricing.domain.exception.BrandPriceNotFoundException;
 import com.inditex.pricing.domain.model.BrandPrice;
 import com.inditex.pricing.domain.repository.BrandPriceRepositoryPort;
-import com.inditex.pricing.infrastructure.rest.util.DateUtils;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,7 +21,7 @@ public class BrandPriceInteractorImpl implements IBrandPriceInteractor{
 			Integer brandId) {
 		return brandPriceRepositoryPort.findBrandPriceByCriteria(applicationDate, productId,
 				brandId).orElseThrow(() -> new BrandPriceNotFoundException(
-						String.format("No price found for the given criteria brandId: %s productId: %s applicationDate: %s", brandId, productId, DateUtils.FORMATTER.format(applicationDate))));
+						String.format("No price found for the given criteria brandId: %s productId: %s applicationDate: %s", brandId, productId, applicationDate)));
 	}
 
 	
