@@ -1,4 +1,4 @@
-package com.inditex.pricing.usecase;
+package com.inditex.pricing.application.usecase;
 
 import java.time.LocalDateTime;
 

@@ -1,4 +1,4 @@
-package com.inditex.pricing.infrastructure.rest.controller;
+package com.inditex.pricing.infrastructure.rest.unit.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
@@ -12,9 +12,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import com.inditex.pricing.application.usecase.IBrandPriceInteractor;
 import com.inditex.pricing.domain.model.BrandPrice;
+import com.inditex.pricing.infrastructure.rest.controller.BrandPriceController;
 import com.inditex.pricing.model.PriceResponse;
-import com.inditex.pricing.usecase.IBrandPriceInteractor;
 
 class BrandPriceControllerTest {
 
@@ -32,7 +33,7 @@ class BrandPriceControllerTest {
     @Test
     void shouldReturnPriceResponseWhenValidRequest() throws Exception {
     	
-        String applicationDate = "2020-06-14-10:00:00";
+        String applicationDate = "2020-06-14T10:00:00";
         Integer productId = 35455;
         Integer brandId = 1;
     	
@@ -58,8 +59,8 @@ class BrandPriceControllerTest {
         assertThat(response.getStatusCode().is2xxSuccessful()).isTrue();
         PriceResponse body = response.getBody();
         assertThat(body).isNotNull();
-        assertThat(body.getStartDate()).isEqualTo("2020-06-14-00:00:00");
-        assertThat(body.getEndDate()).isEqualTo("2020-12-31-23:59:00");
+        assertThat(body.getStartDate()).isEqualTo("2020-06-14T00:00:00");
+        assertThat(body.getEndDate()).isEqualTo("2020-12-31T23:59:00");
         assertThat(body.getPrice()).isEqualTo("35.50 EUR");
         assertThat(body.getBrandId()).isEqualTo(1);
         assertThat(body.getProductId()).isEqualTo(35455);

@@ -12,9 +12,9 @@ public class PriceResponseMapper {
     	PriceResponse response = new PriceResponse();
     	response.setBrandId(brandPrice.getBrandId());
     	response.setProductId(brandPrice.getProductId());
-    	response.setStartDate(DateUtils.FORMATTER.format(brandPrice.getStartDate()));
+    	response.setStartDate(DateUtils.ISO_FORMAT.format(brandPrice.getStartDate()));
     	response.setPriceList(brandPrice.getPriceList());
-    	response.setEndDate(DateUtils.FORMATTER.format(brandPrice.getEndDate()));
+    	response.setEndDate(DateUtils.ISO_FORMAT.format(brandPrice.getEndDate()));
     	response.setPrice(PriceFormatter.formatPrice(brandPrice.getPrice(), brandPrice.getCurrency()));
     	return response;
 

@@ -1,4 +1,4 @@
-package com.inditex.pricing.usecase;
+package com.inditex.pricing.application.usecase.unit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -13,6 +13,7 @@ import java.util.Optional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.inditex.pricing.application.usecase.BrandPriceInteractorImpl;
 import com.inditex.pricing.domain.exception.BrandPriceNotFoundException;
 import com.inditex.pricing.domain.model.BrandPrice;
 import com.inditex.pricing.domain.repository.BrandPriceRepositoryPort;
@@ -26,7 +27,6 @@ public class BrandPriceInteractorImplTest {
     void setUp() {
     	brandPriceRepositoryPort = mock(BrandPriceRepositoryPort.class);
         brandPriceInteractor = new BrandPriceInteractorImpl(brandPriceRepositoryPort);
-
     }
     
     @Test

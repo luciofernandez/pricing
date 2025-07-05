@@ -1,4 +1,4 @@
-package com.inditex.pricing.infrastructure.database.h2.adapter.mapper;
+package com.inditex.pricing.infrastructure.database.h2.adapter.unit.mapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

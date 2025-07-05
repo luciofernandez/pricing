@@ -1,4 +1,4 @@
-package com.inditex.pricing.infrastructure.rest.mapper;
+package com.inditex.pricing.infrastructure.rest.unit.mapper;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -8,6 +8,7 @@ import java.time.temporal.ChronoUnit;
 import org.assertj.core.data.TemporalUnitOffset;
 import org.junit.jupiter.api.Test;
 
+import com.inditex.pricing.infrastructure.rest.mapper.ErrorResponseMapper;
 import com.inditex.pricing.model.ErrorResponse;
 
 public class ErrorResponseMapperTest {

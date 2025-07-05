@@ -1,4 +1,4 @@
-package com.inditex.pricing.infrastructure.database.h2.adapter;
+package com.inditex.pricing.infrastructure.database.h2.adapter.unit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -15,6 +15,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
 
 import com.inditex.pricing.domain.model.BrandPrice;
+import com.inditex.pricing.infrastructure.database.h2.adapter.PricesRepositoryAdapter;
 import com.inditex.pricing.infrastructure.database.h2.entity.PricesEntity;
 import com.inditex.pricing.infrastructure.database.h2.mapper.PricesEntityMapper;
 import com.inditex.pricing.infrastructure.database.h2.repository.PricesJpaRepository;
