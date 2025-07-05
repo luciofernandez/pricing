@@ -11,6 +11,7 @@ Este proyecto implementa una API REST para consultar el precio final y la tarifa
 - Maven
 - H2 (Base de datos en memoria)
 - OpenAPI / Swagger UI
+- Docker
 
 ## 📦 Requisitos previos
 
@@ -18,7 +19,7 @@ Este proyecto implementa una API REST para consultar el precio final y la tarifa
 - Maven 3.8+
 - Tener instalado Postman (puedes descargarlo desde https://www.postman.com/downloads/)
 - Descargar la colección de Postman incluida en el proyecto, ubicada en `src/main/resources/postman/postman_collection.json`
-
+- Tener instalado Docker (opcional)
 
 ## Estructura del proyecto
 
@@ -81,6 +82,45 @@ Puedes ejecutar sólo los test de la siguiente manera
 mvn test
 ```
 
+## ▶️🐳 Ejecución con Docker
+
+Se puede ejecutar la API dentro de un contenedor Docker. 
+En la raíz del proyecto está incluida la imagen `Dockerfile` y el fichero de configuración `docker-compose.yml`.  
+Para la ejecución, se necesita:
+
+ **Docker instalado**
+  
+Puedes descargarlo aquí: [Docker Desktop](https://www.docker.com/products/docker-desktop)
+  
+ **🐙 Ejecución con Docker Compose**
+
+Ejecutar el fichero `docker-compose.yml` ubicado en la raíz del proyecto.
+
+```bash
+docker-compose up -d
+```
+
+Esto hará lo siguiente:
+
+- Descargará (o reutilizará) la imagen ya definida en el docker-compose.yml.
+
+- Levantará el contenedor en segundo plano (-d).
+
+- Mapeará el puerto configurado (por defecto 8080).
+
+Gestión del contenedor
+* Ver logs en tiempo real
+
+```bash
+docker-compose logs -f
+```
+
+* Detener y eliminar contenedores
+
+```bash
+docker-compose down
+```
+
 ## 🧪 Base de datos H2
 
 Puedes acceder a la consola de H2 en:
@@ -100,7 +140,11 @@ http://localhost:8080/h2-console
 2. Importar la colección:
    - Haz clic en **Import** (arriba a la izquierda).
    - Selecciona la pestaña **File**.
+<<<<<<< HEAD
    - Navega y selecciona el archivo `postman_collection.json` que se encuentra en `src/main/resources/postmasn` de este proyecto.
+=======
+   - Navega y selecciona el archivo `postman_collection.json` que se encuentra en `src/main/resources/postman` de este proyecto.
+>>>>>>> develop
    - Haz clic en **Import**.
 
 3. La colección aparecerá en la barra lateral izquierda con todas las solicitudes configuradas.
@@ -115,9 +159,9 @@ http://localhost:8080/h2-console
 
 ## 📚 Endpoint Principal
 
-| Método | Endpoint                            | Descripción                                      														|
-|--------|-------------------------------------|--------------------------------------------------------------------------------------------------------|
-| GET    | `/inditex/prices`                   | Obtiene el precio final y la tarifa del producto con mayor prioridad calificaciones por profesor       |
+| Método | Endpoint                            | Descripción                                      														    |  
+|--------|---------------------|---------------------------------------------------------------------------------------------------------------------------------|  
+| GET    | `/inditex/prices`                   | Obtiene el precio final y la tarifa del producto con mayor prioridad dentro de un rango de fechas |
 
 Ejemplo de URL configurada:
 http://localhost:8080/prices?applicationDate=2023-12-31-10:00:00&productId=35455&brandId=1
@@ -125,5 +169,5 @@ http://localhost:8080/prices?applicationDate=2023-12-31-10:00:00&productId=35455
 ## Notas importantes
 
 - Asegúrate que la API esté corriendo en el puerto y URL configurados en la colección (por defecto `http://localhost:8080`).
-- La fecha `applicationDate` debe tener el formato `yyyy-MM-dd HH:mm:ss`.
+- La fecha `applicationDate` debe tener el formato ISO 8601 `yyyy-MM-ddTHH:mm:ss`.
 - Puedes editar los valores de los parámetros en las solicitudes de la colección para hacer pruebas con diferentes datos.

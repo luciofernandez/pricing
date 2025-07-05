@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.inditex.pricing.api.PricesApi;
+import com.inditex.pricing.application.usecase.IBrandPriceInteractor;
 import com.inditex.pricing.infrastructure.rest.mapper.PriceResponseMapper;
 import com.inditex.pricing.infrastructure.rest.util.DateUtils;
 import com.inditex.pricing.model.PriceResponse;
-import com.inditex.pricing.usecase.IBrandPriceInteractor;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
